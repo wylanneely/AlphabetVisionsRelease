@@ -17,8 +17,18 @@ class GameMaster: WordTranscriptDelegate {
         
     }
     
+    var wordGoalStrings: [String] {
+        var strings: [String] = []
+        let currentGoals = getCurrentWordGoals()
+        
+        for g in currentGoals {
+            strings.append(g.word.lowercased())
+        }
+        return strings
+    }
     
     static let global = GameMaster()
+    let virtualObject = VirtualObject()
     
     var player: Player?
     

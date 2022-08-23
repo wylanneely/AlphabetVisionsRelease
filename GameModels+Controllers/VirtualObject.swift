@@ -23,8 +23,6 @@ class VirtualObject: SCNReferenceNode {
     var allowedAlignment: ARRaycastQuery.TargetAlignment {
         if modelName == "sticky note" {
             return .any
-        } else if modelName == "painting" {
-            return .vertical
         } else {
             return .horizontal
         }
@@ -65,6 +63,13 @@ class VirtualObject: SCNReferenceNode {
         raycast?.stopTracking()
         raycast = nil
     }
+    
+    var isACurrentWordGoal: Bool {
+        if GameMaster.global.wordGoalStrings.contains(modelName.lowercased()) {
+            return true
+        } else {
+            return false
+        }    }
 }
 
 extension VirtualObject {
@@ -75,42 +80,18 @@ extension VirtualObject {
     /// Loads all the model objects within `Models.scnassets`.
     static let availableObjects: [VirtualObject] = {
         let modelsURL = Bundle.main.url(forResource: "Models.scnassets", withExtension: nil)!
-        
-        var wordGoals: [WordGoal] { return GameMaster.global.getCurrentWordGoals() }
-
-        
+                
         let fileEnumerator = FileManager().enumerator(at: modelsURL, includingPropertiesForKeys: [])!
         return fileEnumerator.compactMap { element in
             let url = element as! URL
             if url.pathExtension == "usdz" {
                 if let v = VirtualObject(url: url) {
-                    var wordGoalStrings: [String] = []
-                    for word in wordGoals {
-                        wordGoalStrings.append(word.word)
-                    }
-                    if wordGoalStrings.contains(v.modelName) {
-                        return v
-                    } else {
-                        
-                    }
+                    if v.isACurrentWordGoal { return v } }
                 }
                 
-            }
             if url.pathExtension == "scn" && !url.path.contains("lighting")  {
                 if let v = VirtualObject(url: url) {
-                    var wordGoalStrings: [String] = []
-                    for word in wordGoals {
-                        wordGoalStrings.append(word.word)
-                    }
-                    if wordGoalStrings.contains(v.modelName) {
-                        return v
-                    } else {
-                        return nil
-                    }
-                }
-                
-            } else {
-                return nil
+                    if v.isACurrentWordGoal { return v} }
             }
         return nil}
     }()
@@ -125,10 +106,8 @@ extension VirtualObject {
                     vObjcts.append(obj)
                 }
             }
-            
         }
         return vObjcts
-        
     }
     
     /// Returns a `VirtualObject` if one exists as an ancestor to the provided node.

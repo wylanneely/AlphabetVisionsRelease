@@ -9,11 +9,10 @@ import UIKit
 import VisionKit
 import Vision
 
-class DocumentScanningViewController: UIViewController {
+class DocumentScanningViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    static let businessCardContentsIdentifier = "toVisionResults"
-    static let receiptContentsIdentifier = "toVisionResults"
     static let otherContentsIdentifier = "toVisionResults"
 
     enum ScanMode: Int {
@@ -28,6 +27,7 @@ class DocumentScanningViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.registerTableViewCells()
         textRecognitionRequest = VNRecognizeTextRequest(completionHandler: { (request, error) in
             guard let resultsViewController = self.resultsViewController else {
                 print("resultsViewController is not set")
@@ -67,19 +67,47 @@ class DocumentScanningViewController: UIViewController {
             print(error)
         }
     }
+    //MARK: - Tableview Delegate
+
+    var wordGoals: [WordGoal] {
+        return GameMaster.global.getCurrentWordGoals()
+    }
+    @IBOutlet weak var tableView: UITableView!
+    private func registerTableViewCells() {
+        let textFieldCell = UINib(nibName: "WordGoalTableViewCell",
+                                  bundle: nil)
+        self.tableView.register(textFieldCell,
+                                forCellReuseIdentifier: "WordGoalTableViewCell")
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+       return wordGoals.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let wordGoalIndex = indexPath.row
+        
+        let wordGoal = wordGoals[wordGoalIndex]
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "WordGoalTableViewCell") as? WordGoalTableViewCell {
+            cell.setWordGoal(wordGoal)
+                return cell
+            }
+            
+            return UITableViewCell()
+    }
+    
+    
+    
 }
 
 extension DocumentScanningViewController: VNDocumentCameraViewControllerDelegate {
     func documentCameraViewController(_ controller: VNDocumentCameraViewController, didFinishWith scan: VNDocumentCameraScan) {
         var vcID: String?
-        switch scanMode {
-        case .receipts:
-            vcID = DocumentScanningViewController.receiptContentsIdentifier
-        case .businessCards:
-            vcID = DocumentScanningViewController.businessCardContentsIdentifier
-        default:
+       
             vcID = DocumentScanningViewController.otherContentsIdentifier
-        }
+        
         
         if let vcID = vcID {
             resultsViewController = storyboard?.instantiateViewController(withIdentifier: vcID) as? (UIViewController & RecognizedTextDataSource)

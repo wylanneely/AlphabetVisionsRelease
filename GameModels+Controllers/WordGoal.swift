@@ -8,6 +8,8 @@
 
 
 import Foundation
+import UIKit
+
 
 class WordGoal {
     
@@ -25,6 +27,8 @@ class WordGoal {
         isComplete = true
     }
     
+    var image: UIImage?
+    
 }
 
 class WordGoalController {
@@ -37,11 +41,12 @@ class WordGoalController {
     let b12 = WordGoal(letter: "B", word: "Bear")
     let b13 = WordGoal(letter: "B", word: "Bull")
     let b14 = WordGoal(letter: "B", word: "Bat")
-    let b = WordGoal(letter: "B", word: "Bus")
     let bagel = WordGoal(letter: "B", word: "Bagel")
     let banana = WordGoal(letter: "B", word: "Banana")
-    let bottle = WordGoal(letter: "B", word: "Bus")
-    let bread = WordGoal(letter: "B", word: "Bus")
+    let bottle = WordGoal(letter: "B", word: "Bottle")
+    let bread = WordGoal(letter: "B", word: "Bread")
+    let boat = WordGoal(letter: "B", word: "Boat")
+
 
     let can = WordGoal(letter: "C", word: "Can")
     let candle = WordGoal(letter: "C", word: "Candle")
@@ -89,8 +94,8 @@ class WordGoalController {
     func set1()-> [WordGoal] {
         return [can,candle,chair,coffee,cookie,cup]}
     
-    var setA1: [WordGoal] {  return [orange,bagel,cup,lamp,vase,painting] }
-    var setB1: [WordGoal] {  return [bagel,banana,bottle,bread,drum,lemon] }
+    var setA1: [WordGoal] {  return [a11,a12,a13,a14,a15] }
+    var setB1: [WordGoal] {  return [bagel,banana,bottle,bread,boat] }
     var setC2: [WordGoal] {  return [can,
                                     cup,
                                     candle,
