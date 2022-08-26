@@ -120,8 +120,7 @@ class VirtualObjectSelectionViewController: UITableViewController {
         dismiss(animated: true, completion: nil)
     }
         
-    // MARK: - UITableViewDataSou
-    rce
+    // MARK: - UITableViewDataSource
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return GameMaster.global.wordGoalStrings.count

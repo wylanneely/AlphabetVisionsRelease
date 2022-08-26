@@ -143,3 +143,4 @@ extension ARViewController: VirtualObjectSelectionViewControllerDelegate {
         isRestartAvailable = true
     }
 }
+

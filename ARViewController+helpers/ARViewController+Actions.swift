@@ -76,7 +76,11 @@ extension ARViewController: UIPopoverPresentationControllerDelegate {
               segueIdentifer == .showObjects else { return }
         
         let objectsViewController = segue.destination as! VirtualObjectSelectionViewController
+        
+        
         objectsViewController.virtualObjects = VirtualObject.availableObjects
+        
+        
         objectsViewController.delegate = self
         objectsViewController.sceneView = sceneView
         self.objectsViewController = objectsViewController

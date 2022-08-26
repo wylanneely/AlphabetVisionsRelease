@@ -1,10 +1,9 @@
-//
-//  RecognizedTextDataSource.swift
-//  AlphabetVisionABCs
-//
-//  Created by Wylan L Neely on 8/25/22.
-//  Copyright © 2022 Apple. All rights reserved.
-//
+/*
+See LICENSE folder for this sample’s licensing information.
+
+Abstract:
+The protocol that a class must conform to in order to receive recognized text information.
+*/
 
 import UIKit
 import Vision
