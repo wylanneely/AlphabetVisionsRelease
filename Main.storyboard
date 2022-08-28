@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21223" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9go-qX-9J7">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21204"/>
@@ -345,10 +345,10 @@
             </objects>
             <point key="canvasLocation" x="-1000" y="496"/>
         </scene>
-        <!--Landing Page View Controller-->
+        <!--Landing View Controller-->
         <scene sceneID="pvN-st-3GW">
             <objects>
-                <viewController id="9go-qX-9J7" customClass="LandingPageViewController" customModule="AlphabetVisionABCs" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9go-qX-9J7" customClass="LandingViewController" customModule="AlphabetVisionABCs" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2sW-5F-QcD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -374,6 +374,9 @@
                                 <color key="tintColor" red="0.823215425" green="0.94599300620000004" blue="0.8921549916" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Continue"/>
+                                <connections>
+                                    <action selector="continueTapped:" destination="9go-qX-9J7" eventType="touchUpInside" id="cra-BE-zUi"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agU-Qk-Rkt">
                                 <rect key="frame" x="80" y="729" width="254" height="88"/>
@@ -389,6 +392,7 @@
                                     <color key="baseForegroundColor" name="AccentColor"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="newGameTapped:" destination="9go-qX-9J7" eventType="touchUpInside" id="dg7-eJ-Qx8"/>
                                     <segue destination="lyb-nL-HOe" kind="show" id="dvP-3h-5ca"/>
                                 </connections>
                             </button>
@@ -413,6 +417,10 @@
                             <constraint firstItem="eSp-hf-wfZ" firstAttribute="leading" secondItem="ZF9-Xj-9eW" secondAttribute="leading" id="pYv-cV-BkR"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="continueButton" destination="b2N-Aj-L8A" id="cSD-T2-vfT"/>
+                        <outlet property="newGameButton" destination="agU-Qk-Rkt" id="LIA-K8-dX0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cgH-9z-qBc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
