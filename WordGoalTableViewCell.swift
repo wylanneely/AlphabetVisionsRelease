@@ -15,7 +15,22 @@ class WordGoalTableViewCell: UITableViewCell {
     
     func setWordGoal(_ wordGoal: WordGoal) {
         self.wordGoal = wordGoal
-        wordHintLabel.text = wordGoal.word
+        wordHintLabel.text = returnHint(text: wordGoal.word)
+        
+    }
+    
+    func returnHint(text:String)->String {
+        var word = ""
+        var ind = 0
+        for t in text {
+            if ind == 0 {
+                word.append(t)
+                ind = 1
+            } else {
+                word.append(" _")
+            }
+        }
+        return word
     }
     
     override func awakeFromNib() {

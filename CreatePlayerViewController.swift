@@ -13,6 +13,16 @@ class CreatePlayerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        characterImage.isUserInteractionEnabled = true//do not forget to rightnot move
+
+
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.swiped(gesture:)))
+        swipeRight.direction = UISwipeGestureRecognizer.Direction.right
+        characterImage.addGestureRecognizer(swipeRight)
+
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action:  #selector(self.swiped(gesture:)))
+        swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
+        characterImage.addGestureRecognizer(swipeLeft)
         // Do any additional setup after loading the view.
     }
     
@@ -24,18 +34,72 @@ class CreatePlayerViewController: UIViewController {
     
     @IBOutlet weak var nicknameText: UITextField!
     
-//    func exctractPlaterData() -> (name:String,age:String,pic:UIImage?) {
-//
-//        if let name = nicknameText.text, let age = playerAgeText.text, let pic = characterImage.image {
-//            return (name,age,pic)
-//        }
-//        return ("","",nil)
-//    }
+    
+    //MARK: - Image Gesture
+
+    
+    let imageList = CharacterImageList
+    func getImage(named: String)->UIImage? {
+        let image = UIImage(named: named)
+        return image
+    }
+    
+    var imageIndex: NSInteger = 0
+    var maxImages = 11
+
+    @objc func swiped(gesture: UIGestureRecognizer) {
+        
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+            
+            switch swipeGesture.direction {
+                
+            case UISwipeGestureRecognizer.Direction.right :
+                // decrease index first
+                imageIndex = imageIndex - 1
+                // check if index is in range
+                if imageIndex < 0 {
+                    imageIndex = maxImages
+                }
+                if let characterI = imageList[imageIndex] {
+                    characterImage.image = characterI
+                }
+            case UISwipeGestureRecognizer.Direction.left:
+                // increase index first
+                imageIndex = imageIndex + 1
+                // check if index is in range
+                if imageIndex > maxImages {
+                    imageIndex = 0
+                }
+                
+                if let characterI = imageList[imageIndex] {
+                    characterImage.image = characterI
+                }
+                
+            default:
+                break //stops the code/codes nothing.
+                
+            }
+            
+        }
+    }
+        
+        
+        
+    
+    
+    //MARK: - Extract and Save PLayer
+    func exctractPlaterData() -> (name:String,age:String,pic:String) {
+
+        if let name = nicknameText.text, let age = playerAgeText.text {
+            return (name,age,"lion")
+        }
+        return ("","","")
+    }
     
      @IBAction func createPlayerTapped(_ sender: Any) {
    
-        // let playerData = exctractPlaterData()
-         
+         let playerData = exctractPlaterData()
+         GameMaster.global.savePlayerData(name: playerData.name, age: playerData.age, ImageID: playerData.pic)
          
          
      }
