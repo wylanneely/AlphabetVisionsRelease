@@ -19,7 +19,7 @@ class ObjectCell: UITableViewCell {
     
     var modelName = "" {
         didSet {
-            objectTitleLabel.text = modelName.capitalized
+            objectTitleLabel.text = modelName.lowercased()
             objectImageView.image = UIImage(named: modelName)
         }
     }

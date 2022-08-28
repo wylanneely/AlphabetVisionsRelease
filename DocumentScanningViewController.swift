@@ -21,7 +21,7 @@ class DocumentScanningViewController: UIViewController, UITableViewDataSource, U
         case other
     }
     
-    var scanMode: ScanMode = .receipts
+    var scanMode: ScanMode = .other
     var resultsViewController: (UIViewController & RecognizedTextDataSource)?
     var textRecognitionRequest = VNRecognizeTextRequest()
 

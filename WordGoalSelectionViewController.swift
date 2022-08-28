@@ -28,28 +28,28 @@ class WordGoalSelectionViewController: UIViewController {
     //TODO: check if goals are completed, update wordGoalSets
     
     @IBAction func ABC1Tapped(_ sender: Any) {
-        let wordGoals = GameMaster.global.goalsController.setA1
+        let wordGoals = GameMaster.global.goalsController.setTestA
         GameMaster.global.setWordGoals(wordGoals: wordGoals)
         performSegue(withIdentifier: "toScannerVC", sender: self)
         
     }
     
     @IBAction func DEF1Tapped(_ sender: Any) {
-        let wordGoals = GameMaster.global.goalsController.setB1
+        let wordGoals = GameMaster.global.goalsController.setTestB
         GameMaster.global.setWordGoals(wordGoals: wordGoals)
         performSegue(withIdentifier: "toScannerVC", sender: self)
 
     }
     
     @IBAction func GHI1Tapped(_ sender: Any) {
-        let wordGoals = GameMaster.global.goalsController.setC2
+        let wordGoals = GameMaster.global.goalsController.setTest3
         GameMaster.global.setWordGoals(wordGoals: wordGoals)
         performSegue(withIdentifier: "toScannerVC", sender: self)
 
     }
     
     @IBAction func JKL1Tapped(_ sender: Any) {
-        let wordGoals = GameMaster.global.goalsController.exampleSetC
+        let wordGoals = GameMaster.global.goalsController.setTest3
         GameMaster.global.setWordGoals(wordGoals: wordGoals)
         performSegue(withIdentifier: "toScannerVC", sender: self)
     }

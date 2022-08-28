@@ -64,18 +64,21 @@ class GameMaster: WordTranscriptDelegate {
     //TODO: - add support for 3 save charachters
     let kPlayer1Name = "kP1Name"
     let kPlayer1Age = "kP1Age"
-    let kP1Progress = "kP1Progress"
-   // let kPlayer1ImageID = "kP1Name"
+    let kPlayer1Progress = "kP1Progress"
+    let kPlayer1ImageID = "kP1ImageID"
     
-    func savePlayerData(name: String, age: String, ImageID: Int) {
+    //TODO: - add a completion to load n save
+    func savePlayerData(name: String, age: String, ImageID: String) {
         UserDefaults.standard.set(name, forKey: kPlayer1Name)
         UserDefaults.standard.set(age, forKey: kPlayer1Age)
+        UserDefaults.standard.set(ImageID, forKey: kPlayer1ImageID)
     }
     
     func getPlayer1Data()-> Player? {
-        let age = UserDefaults.standard.integer(forKey: kPlayer1Age)
-        if  let name = UserDefaults.standard.string(forKey: kPlayer1Name) {
-          return Player(nickName: name, age: age, animal: nil)
+       if let age = UserDefaults.standard.string(forKey: kPlayer1Age),
+          let imgID = UserDefaults.standard.string(forKey: kPlayer1ImageID),
+          let name = UserDefaults.standard.string(forKey: kPlayer1Name) {
+          return Player(nickName: name, age: age, animal: imgID)
       } else {
           return nil
       }

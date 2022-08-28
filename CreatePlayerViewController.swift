@@ -13,6 +13,8 @@ class CreatePlayerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.hideKeyboardWhenTappedAround()
+        
         characterImage.isUserInteractionEnabled = true//do not forget to rightnot move
 
 

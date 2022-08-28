@@ -13,15 +13,16 @@ class VirtualObject: SCNReferenceNode {
     
     /// The model name derived from the `referenceURL`.
     var modelName: String {
-        return referenceURL.lastPathComponent.replacingOccurrences(of: ".scn", with: "")
+        let ref = referenceURL.lastPathComponent
+            .replacingOccurrences(of: ".scn", with: "")
+            .replacingOccurrences(of: ".usdz", with: "")
+        return ref
     }
     
     /// The alignments that are allowed for a virtual object.
     var allowedAlignment: ARRaycastQuery.TargetAlignment {
         if modelName == "sticky note" {
             return .any
-        } else if modelName == "painting" {
-            return .vertical
         } else {
             return .horizontal
         }
@@ -62,24 +63,53 @@ class VirtualObject: SCNReferenceNode {
         raycast?.stopTracking()
         raycast = nil
     }
+    
+    var isACurrentWordGoal: Bool {
+        if GameMaster.global.wordGoalStrings.contains(modelName.lowercased()) {
+            return true
+        } else {
+            return false
+        }    }
+    
 }
 
 extension VirtualObject {
+    
+    
+
     // MARK: Static Properties and Methods
     /// Loads all the model objects within `Models.scnassets`.
     static let availableObjects: [VirtualObject] = {
         let modelsURL = Bundle.main.url(forResource: "Models.scnassets", withExtension: nil)!
-
+                
         let fileEnumerator = FileManager().enumerator(at: modelsURL, includingPropertiesForKeys: [])!
-
         return fileEnumerator.compactMap { element in
             let url = element as! URL
-
-            guard url.pathExtension == "scn" && !url.path.contains("lighting") else { return nil }
-
-            return VirtualObject(url: url)
-        }
+            if url.pathExtension == "usdz" {
+                if let v = VirtualObject(url: url) {
+                    if v.isACurrentWordGoal { return v } }
+                }
+                
+            if url.pathExtension == "scn" && !url.path.contains("lighting")  {
+                if let v = VirtualObject(url: url) {
+                    if v.isACurrentWordGoal { return v} }
+            }
+        return nil}
     }()
+    
+    
+    
+    func filterWordGoalObjects(words: [WordGoal]) -> [VirtualObject] {
+        var vObjcts: [VirtualObject] = []
+        for word in words {
+            for obj in VirtualObject.availableObjects {
+                if word.word == obj.modelName {
+                    vObjcts.append(obj)
+                }
+            }
+        }
+        return vObjcts
+    }
     
     /// Returns a `VirtualObject` if one exists as an ancestor to the provided node.
     static func existingObjectContainingNode(_ node: SCNNode) -> VirtualObject? {
@@ -92,4 +122,5 @@ extension VirtualObject {
         // Recurse up to check if the parent is a `VirtualObject`.
         return existingObjectContainingNode(parent)
     }
+    
 }

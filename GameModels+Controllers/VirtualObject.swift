@@ -70,6 +70,7 @@ class VirtualObject: SCNReferenceNode {
         } else {
             return false
         }    }
+    
 }
 
 extension VirtualObject {

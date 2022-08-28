@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21223" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9go-qX-9J7">
-    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21204"/>
@@ -439,57 +439,28 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="horizontalColorFLIPPED" translatesAutoresizingMaskIntoConstraints="NO" id="2rV-eU-znd">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
                             </imageView>
-                            <view contentMode="scaleToFill" id="3ct-1V-iJ3">
-                                <rect key="frame" x="40" y="416" width="334" height="91"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jj  Kk  Ll" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRD-ey-DKx">
-                                        <rect key="frame" x="20" y="21" width="179.5" height="49"/>
-                                        <fontDescription key="fontDescription" name="PermanentMarker" family="Permanent Marker" pointSize="34"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="4zo-j8-XTz">
-                                        <rect key="frame" x="47" y="0.0" width="239" height="91"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain"/>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lvl.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Yf-wk-he8">
-                                        <rect key="frame" x="225" y="25.5" width="89" height="40.5"/>
-                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="33"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <viewLayoutGuide key="safeArea" id="fbV-jK-EdV"/>
-                                <color key="backgroundColor" red="0.77131325009999996" green="0.94593924279999997" blue="0.86117661000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="cRD-ey-DKx" firstAttribute="leading" secondItem="3ct-1V-iJ3" secondAttribute="leading" constant="20" id="2Td-V8-xSH"/>
-                                    <constraint firstAttribute="trailing" secondItem="0Yf-wk-he8" secondAttribute="trailing" constant="20" id="Ps6-Os-Mjd"/>
-                                    <constraint firstItem="cRD-ey-DKx" firstAttribute="centerY" secondItem="3ct-1V-iJ3" secondAttribute="centerY" id="YD5-fx-NC1"/>
-                                    <constraint firstItem="0Yf-wk-he8" firstAttribute="centerY" secondItem="3ct-1V-iJ3" secondAttribute="centerY" id="kmq-iG-aWu"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" id="T2Z-k9-8eL">
                                 <rect key="frame" x="40" y="317" width="334" height="91"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="nLn-IL-YcM">
-                                        <rect key="frame" x="30" y="31" width="239" height="91"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="91"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain"/>
+                                        <connections>
+                                            <action selector="GHI1Tapped:" destination="Fnj-28-k3c" eventType="touchUpInside" id="pIz-dD-7h4"/>
+                                        </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gg  Hh  Ii" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dxb-An-FLc">
-                                        <rect key="frame" x="20" y="21" width="171.5" height="49"/>
-                                        <fontDescription key="fontDescription" name="PermanentMarker" family="Permanent Marker" pointSize="34"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lvl.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZ1-Az-InH">
                                         <rect key="frame" x="225" y="25.5" width="89" height="40.5"/>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="33"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gg  Hh  Ii" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dxb-An-FLc">
+                                        <rect key="frame" x="20" y="21" width="171.5" height="49"/>
+                                        <fontDescription key="fontDescription" name="PermanentMarker" family="Permanent Marker" pointSize="34"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -514,7 +485,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="fj4-y3-5Fr">
-                                        <rect key="frame" x="47" y="0.0" width="239" height="91"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="91"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain"/>
@@ -542,8 +513,8 @@
                                 <rect key="frame" x="40" y="119" width="334" height="91"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6h9-4G-0Zy">
-                                        <rect key="frame" x="0.0" y="0.0" width="239" height="91"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6h9-4G-0Zy">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="91"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain"/>
                                         <connections>
@@ -571,99 +542,8 @@
                                     <constraint firstItem="0KX-Hq-kzg" firstAttribute="centerY" secondItem="cIi-Yd-f3I" secondAttribute="centerY" id="DQl-9j-nKd"/>
                                     <constraint firstItem="0KX-Hq-kzg" firstAttribute="leading" secondItem="cIi-Yd-f3I" secondAttribute="leading" constant="20" id="ZAn-ZG-YVo"/>
                                     <constraint firstItem="6h9-4G-0Zy" firstAttribute="leading" secondItem="8Nl-fb-yOb" secondAttribute="leading" id="aSY-hc-CWP"/>
-                                    <constraint firstItem="1fi-RR-BNZ" firstAttribute="leading" secondItem="6h9-4G-0Zy" secondAttribute="trailing" id="fPU-S9-CF2"/>
                                     <constraint firstItem="6h9-4G-0Zy" firstAttribute="top" secondItem="8Nl-fb-yOb" secondAttribute="top" id="lae-7V-kg5"/>
                                     <constraint firstAttribute="trailing" secondItem="1fi-RR-BNZ" secondAttribute="trailing" constant="20" id="wWK-ht-2Vc"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" id="qkh-1e-gP4">
-                                <rect key="frame" x="40" y="515" width="334" height="91"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mm  Nn  Oo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcJ-T6-A6F">
-                                        <rect key="frame" x="16" y="23.5" width="183" height="44.5"/>
-                                        <fontDescription key="fontDescription" name="PermanentMarker" family="Permanent Marker" pointSize="31"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="3Aq-7g-dly">
-                                        <rect key="frame" x="47" y="0.0" width="239" height="91"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain"/>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lvl.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VbQ-8H-OXp">
-                                        <rect key="frame" x="225" y="25.5" width="89" height="40.5"/>
-                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="33"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <viewLayoutGuide key="safeArea" id="YRR-BN-zGY"/>
-                                <color key="backgroundColor" red="0.77131325009999996" green="0.94593924279999997" blue="0.86117661000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="VbQ-8H-OXp" firstAttribute="centerY" secondItem="qkh-1e-gP4" secondAttribute="centerY" id="6be-J7-A4M"/>
-                                    <constraint firstAttribute="trailing" secondItem="VbQ-8H-OXp" secondAttribute="trailing" constant="20" id="JdL-Bv-2pq"/>
-                                    <constraint firstItem="wcJ-T6-A6F" firstAttribute="centerY" secondItem="qkh-1e-gP4" secondAttribute="centerY" id="nLH-Bg-icB"/>
-                                    <constraint firstItem="wcJ-T6-A6F" firstAttribute="leading" secondItem="qkh-1e-gP4" secondAttribute="leading" constant="16" id="wc8-qy-i01"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" id="JV7-yp-E7A">
-                                <rect key="frame" x="40" y="614" width="334" height="91"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pp  Qq  Rr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQq-5X-WBb">
-                                        <rect key="frame" x="20" y="21" width="177" height="49"/>
-                                        <fontDescription key="fontDescription" name="PermanentMarker" family="Permanent Marker" pointSize="34"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="GKR-xb-zDL">
-                                        <rect key="frame" x="47" y="0.0" width="239" height="91"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain"/>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lvl.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y0w-3v-bR1">
-                                        <rect key="frame" x="225" y="25.5" width="89" height="40.5"/>
-                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="33"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <viewLayoutGuide key="safeArea" id="V12-Ce-4BL"/>
-                                <color key="backgroundColor" red="0.77131325009999996" green="0.94593924279999997" blue="0.86117661000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="dQq-5X-WBb" firstAttribute="centerY" secondItem="JV7-yp-E7A" secondAttribute="centerY" id="AEF-sr-dih"/>
-                                    <constraint firstAttribute="trailing" secondItem="Y0w-3v-bR1" secondAttribute="trailing" constant="20" id="MDL-wG-O7A"/>
-                                    <constraint firstItem="Y0w-3v-bR1" firstAttribute="centerY" secondItem="JV7-yp-E7A" secondAttribute="centerY" id="Z3y-Zj-ZEU"/>
-                                    <constraint firstItem="dQq-5X-WBb" firstAttribute="leading" secondItem="JV7-yp-E7A" secondAttribute="leading" constant="20" id="fPp-8m-KRq"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" id="Rv1-DF-Yri">
-                                <rect key="frame" x="40" y="713" width="334" height="91"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ss  Tt  Uu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLs-bK-96l">
-                                        <rect key="frame" x="20" y="21" width="166.5" height="49"/>
-                                        <fontDescription key="fontDescription" name="PermanentMarker" family="Permanent Marker" pointSize="34"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lvl.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yu6-1I-QUr">
-                                        <rect key="frame" x="225" y="25.5" width="89" height="40.5"/>
-                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="33"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <viewLayoutGuide key="safeArea" id="I42-S4-Y22"/>
-                                <color key="backgroundColor" red="0.77131325009999996" green="0.94593924279999997" blue="0.86117661000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="XLs-bK-96l" firstAttribute="centerY" secondItem="Rv1-DF-Yri" secondAttribute="centerY" id="0au-wg-FJj"/>
-                                    <constraint firstItem="Yu6-1I-QUr" firstAttribute="centerY" secondItem="Rv1-DF-Yri" secondAttribute="centerY" id="9zl-DR-3gz"/>
-                                    <constraint firstItem="XLs-bK-96l" firstAttribute="leading" secondItem="Rv1-DF-Yri" secondAttribute="leading" constant="20" id="hGH-QO-NgA"/>
-                                    <constraint firstAttribute="trailing" secondItem="Yu6-1I-QUr" secondAttribute="trailing" constant="20" id="kGx-CO-3MV"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUg-Bj-oLw">
@@ -714,7 +594,7 @@
                                 <rect key="frame" x="132.5" y="135" width="149.5" height="59.5"/>
                                 <color key="backgroundColor" red="0.99212383390000003" green="0.65578904510000002" blue="1" alpha="0.49088541670000002" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="GloriaHallelujah" family="Gloria Hallelujah" pointSize="25"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Player" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MRv-4r-W7B">
                                 <rect key="frame" x="20" y="48" width="167.5" height="43"/>
@@ -836,7 +716,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Ox2-wj-YvO"/>
+        <segue reference="fY6-lL-6BX"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="add" width="48" height="48"/>
