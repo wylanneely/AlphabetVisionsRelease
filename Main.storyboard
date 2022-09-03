@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21223" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9go-qX-9J7">
-    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21204"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -121,7 +120,7 @@
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fcg-NE-owy">
                                             <rect key="frame" x="0.0" y="0.0" width="125" height="32.5"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="pe7-BJ-lvU">
-                                                <rect key="frame" x="0.0" y="0.0" width="125" height="32.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="125" height="32"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" verticalCompressionResistancePriority="250" text="Tracking status" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ypJ-f8-K1V" userLabel="Messages label">
@@ -383,13 +382,15 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="88" id="Wj4-nE-UJU"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="PermanentMarker" family="Permanent Marker" pointSize="0.0"/>
                                 <color key="tintColor" red="0.823215425" green="0.94599300620000004" blue="0.8921549916" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="New Game">
-                                    <color key="titleColor" name="AccentColor"/>
+                                    <color key="titleColor" systemColor="tintColor"/>
                                 </state>
                                 <buttonConfiguration key="configuration" style="filled" title="New Game">
-                                    <color key="baseForegroundColor" name="AccentColor"/>
+                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="14"/>
+                                    <color key="baseForegroundColor" systemColor="tintColor"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="newGameTapped:" destination="9go-qX-9J7" eventType="touchUpInside" id="dg7-eJ-Qx8"/>
@@ -420,6 +421,7 @@
                     <connections>
                         <outlet property="continueButton" destination="b2N-Aj-L8A" id="cSD-T2-vfT"/>
                         <outlet property="newGameButton" destination="agU-Qk-Rkt" id="LIA-K8-dX0"/>
+                        <segue destination="lZy-dO-XY7" kind="showDetail" identifier="toHomeVC" id="Ox2-wj-YvO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cgH-9z-qBc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -437,45 +439,28 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="horizontalColorFLIPPED" translatesAutoresizingMaskIntoConstraints="NO" id="2rV-eU-znd">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
                             </imageView>
-                            <view contentMode="scaleToFill" id="3ct-1V-iJ3">
-                                <rect key="frame" x="40" y="416" width="334" height="91"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jj  Kk  Ll" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRD-ey-DKx">
-                                        <rect key="frame" x="20" y="21" width="179.5" height="49"/>
-                                        <fontDescription key="fontDescription" name="PermanentMarker" family="Permanent Marker" pointSize="34"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lvl.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Yf-wk-he8">
-                                        <rect key="frame" x="225" y="25.5" width="89" height="40.5"/>
-                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="33"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <viewLayoutGuide key="safeArea" id="fbV-jK-EdV"/>
-                                <color key="backgroundColor" red="0.77131325009999996" green="0.94593924279999997" blue="0.86117661000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="cRD-ey-DKx" firstAttribute="leading" secondItem="3ct-1V-iJ3" secondAttribute="leading" constant="20" id="2Td-V8-xSH"/>
-                                    <constraint firstAttribute="trailing" secondItem="0Yf-wk-he8" secondAttribute="trailing" constant="20" id="Ps6-Os-Mjd"/>
-                                    <constraint firstItem="cRD-ey-DKx" firstAttribute="centerY" secondItem="3ct-1V-iJ3" secondAttribute="centerY" id="YD5-fx-NC1"/>
-                                    <constraint firstItem="0Yf-wk-he8" firstAttribute="centerY" secondItem="3ct-1V-iJ3" secondAttribute="centerY" id="kmq-iG-aWu"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" id="T2Z-k9-8eL">
                                 <rect key="frame" x="40" y="317" width="334" height="91"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gg  Hh  Ii" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dxb-An-FLc">
-                                        <rect key="frame" x="20" y="21" width="171.5" height="49"/>
-                                        <fontDescription key="fontDescription" name="PermanentMarker" family="Permanent Marker" pointSize="34"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="nLn-IL-YcM">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="91"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
+                                        <connections>
+                                            <action selector="GHI1Tapped:" destination="Fnj-28-k3c" eventType="touchUpInside" id="pIz-dD-7h4"/>
+                                        </connections>
+                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lvl.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZ1-Az-InH">
                                         <rect key="frame" x="225" y="25.5" width="89" height="40.5"/>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="33"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gg  Hh  Ii" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dxb-An-FLc">
+                                        <rect key="frame" x="20" y="21" width="171.5" height="49"/>
+                                        <fontDescription key="fontDescription" name="PermanentMarker" family="Permanent Marker" pointSize="34"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -499,6 +484,15 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="fj4-y3-5Fr">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="91"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
+                                        <connections>
+                                            <action selector="DEF1Tapped:" destination="Fnj-28-k3c" eventType="touchUpInside" id="aNb-xI-Wqr"/>
+                                        </connections>
+                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lvl.2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C61-gQ-OKr">
                                         <rect key="frame" x="225" y="25.5" width="89" height="40.5"/>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="33"/>
@@ -519,6 +513,14 @@
                                 <rect key="frame" x="40" y="119" width="334" height="91"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6h9-4G-0Zy">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="91"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
+                                        <connections>
+                                            <action selector="ABC1Tapped:" destination="Fnj-28-k3c" eventType="touchUpInside" id="UcD-Ow-1uC"/>
+                                        </connections>
+                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aa  Bb  Cc" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0KX-Hq-kzg">
                                         <rect key="frame" x="20" y="21" width="174.5" height="49"/>
                                         <fontDescription key="fontDescription" name="PermanentMarker" family="Permanent Marker" pointSize="34"/>
@@ -535,88 +537,13 @@
                                 <viewLayoutGuide key="safeArea" id="8Nl-fb-yOb"/>
                                 <color key="backgroundColor" red="0.77131325009999996" green="0.94593924279999997" blue="0.86117661000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="8Nl-fb-yOb" firstAttribute="bottom" secondItem="6h9-4G-0Zy" secondAttribute="bottom" id="2jL-Cw-RlZ"/>
                                     <constraint firstItem="1fi-RR-BNZ" firstAttribute="centerY" secondItem="cIi-Yd-f3I" secondAttribute="centerY" id="4sr-hc-h9I"/>
                                     <constraint firstItem="0KX-Hq-kzg" firstAttribute="centerY" secondItem="cIi-Yd-f3I" secondAttribute="centerY" id="DQl-9j-nKd"/>
                                     <constraint firstItem="0KX-Hq-kzg" firstAttribute="leading" secondItem="cIi-Yd-f3I" secondAttribute="leading" constant="20" id="ZAn-ZG-YVo"/>
+                                    <constraint firstItem="6h9-4G-0Zy" firstAttribute="leading" secondItem="8Nl-fb-yOb" secondAttribute="leading" id="aSY-hc-CWP"/>
+                                    <constraint firstItem="6h9-4G-0Zy" firstAttribute="top" secondItem="8Nl-fb-yOb" secondAttribute="top" id="lae-7V-kg5"/>
                                     <constraint firstAttribute="trailing" secondItem="1fi-RR-BNZ" secondAttribute="trailing" constant="20" id="wWK-ht-2Vc"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" id="qkh-1e-gP4">
-                                <rect key="frame" x="40" y="515" width="334" height="91"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mm  Nn  Oo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcJ-T6-A6F">
-                                        <rect key="frame" x="16" y="23.5" width="183" height="44.5"/>
-                                        <fontDescription key="fontDescription" name="PermanentMarker" family="Permanent Marker" pointSize="31"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lvl.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VbQ-8H-OXp">
-                                        <rect key="frame" x="225" y="25.5" width="89" height="40.5"/>
-                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="33"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <viewLayoutGuide key="safeArea" id="YRR-BN-zGY"/>
-                                <color key="backgroundColor" red="0.77131325009999996" green="0.94593924279999997" blue="0.86117661000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="VbQ-8H-OXp" firstAttribute="centerY" secondItem="qkh-1e-gP4" secondAttribute="centerY" id="6be-J7-A4M"/>
-                                    <constraint firstAttribute="trailing" secondItem="VbQ-8H-OXp" secondAttribute="trailing" constant="20" id="JdL-Bv-2pq"/>
-                                    <constraint firstItem="wcJ-T6-A6F" firstAttribute="centerY" secondItem="qkh-1e-gP4" secondAttribute="centerY" id="nLH-Bg-icB"/>
-                                    <constraint firstItem="wcJ-T6-A6F" firstAttribute="leading" secondItem="qkh-1e-gP4" secondAttribute="leading" constant="16" id="wc8-qy-i01"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" id="JV7-yp-E7A">
-                                <rect key="frame" x="40" y="614" width="334" height="91"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pp  Qq  Rr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQq-5X-WBb">
-                                        <rect key="frame" x="20" y="21" width="177" height="49"/>
-                                        <fontDescription key="fontDescription" name="PermanentMarker" family="Permanent Marker" pointSize="34"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lvl.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y0w-3v-bR1">
-                                        <rect key="frame" x="225" y="25.5" width="89" height="40.5"/>
-                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="33"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <viewLayoutGuide key="safeArea" id="V12-Ce-4BL"/>
-                                <color key="backgroundColor" red="0.77131325009999996" green="0.94593924279999997" blue="0.86117661000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="dQq-5X-WBb" firstAttribute="centerY" secondItem="JV7-yp-E7A" secondAttribute="centerY" id="AEF-sr-dih"/>
-                                    <constraint firstAttribute="trailing" secondItem="Y0w-3v-bR1" secondAttribute="trailing" constant="20" id="MDL-wG-O7A"/>
-                                    <constraint firstItem="Y0w-3v-bR1" firstAttribute="centerY" secondItem="JV7-yp-E7A" secondAttribute="centerY" id="Z3y-Zj-ZEU"/>
-                                    <constraint firstItem="dQq-5X-WBb" firstAttribute="leading" secondItem="JV7-yp-E7A" secondAttribute="leading" constant="20" id="fPp-8m-KRq"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" id="Rv1-DF-Yri">
-                                <rect key="frame" x="40" y="713" width="334" height="91"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ss  Tt  Uu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLs-bK-96l">
-                                        <rect key="frame" x="20" y="21" width="166.5" height="49"/>
-                                        <fontDescription key="fontDescription" name="PermanentMarker" family="Permanent Marker" pointSize="34"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lvl.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yu6-1I-QUr">
-                                        <rect key="frame" x="225" y="25.5" width="89" height="40.5"/>
-                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="33"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <viewLayoutGuide key="safeArea" id="I42-S4-Y22"/>
-                                <color key="backgroundColor" red="0.77131325009999996" green="0.94593924279999997" blue="0.86117661000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="XLs-bK-96l" firstAttribute="centerY" secondItem="Rv1-DF-Yri" secondAttribute="centerY" id="0au-wg-FJj"/>
-                                    <constraint firstItem="Yu6-1I-QUr" firstAttribute="centerY" secondItem="Rv1-DF-Yri" secondAttribute="centerY" id="9zl-DR-3gz"/>
-                                    <constraint firstItem="XLs-bK-96l" firstAttribute="leading" secondItem="Rv1-DF-Yri" secondAttribute="leading" constant="20" id="hGH-QO-NgA"/>
-                                    <constraint firstAttribute="trailing" secondItem="Yu6-1I-QUr" secondAttribute="trailing" constant="20" id="kGx-CO-3MV"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUg-Bj-oLw">
@@ -667,7 +594,7 @@
                                 <rect key="frame" x="132.5" y="135" width="149.5" height="59.5"/>
                                 <color key="backgroundColor" red="0.99212383390000003" green="0.65578904510000002" blue="1" alpha="0.49088541670000002" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="GloriaHallelujah" family="Gloria Hallelujah" pointSize="25"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Player" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MRv-4r-W7B">
                                 <rect key="frame" x="20" y="48" width="167.5" height="43"/>
@@ -738,12 +665,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z8D-ZU-2MZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1696" y="-621"/>
+            <point key="canvasLocation" x="-1667" y="-1154"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="XSt-oF-ZMs">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="lZy-dO-XY7" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="lZy-dO-XY7" customClass="HomeViewController" customModule="AlphabetVisionABCs" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dlF-We-6Jk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -779,12 +706,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KvX-9a-Kz9"/>
+                    <connections>
+                        <outlet property="nicknameLabel" destination="3g3-9Q-j1n" id="A4a-Nb-FBE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ux1-Gv-X7o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-791.304347826087" y="-621.42857142857144"/>
+            <point key="canvasLocation" x="-1668" y="-467"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="fY6-lL-6BX"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="add" width="48" height="48"/>
         <image name="horizontalColor" width="558" height="800"/>
@@ -793,14 +726,14 @@
         <image name="lion" width="88.5" height="85.5"/>
         <image name="restart" width="20" height="20"/>
         <image name="restartPressed" width="20" height="20"/>
-        <namedColor name="AccentColor">
-            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
