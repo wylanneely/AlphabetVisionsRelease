@@ -28,6 +28,7 @@ class DocumentScanningViewController: UIViewController, UITableViewDataSource, U
     override func viewDidLoad() {
         super.viewDidLoad()
         self.registerTableViewCells()
+        
         textRecognitionRequest = VNRecognizeTextRequest(completionHandler: { (request, error) in
             guard let resultsViewController = self.resultsViewController else {
                 print("resultsViewController is not set")

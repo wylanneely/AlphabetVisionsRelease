@@ -49,7 +49,7 @@ class ARViewController: UIViewController {
     var isRestartAvailable = true
     
     /// A serial queue used to coordinate adding or removing nodes from the scene.
-    let updateQueue = DispatchQueue(label: "com.example.apple-samplecode.arkitexample.serialSceneKitQueue")
+    let updateQueue = DispatchQueue(label: "com.wylan.apps.main.abcvision")
     
     /// Convenience accessor for the session owned by ARSCNView.
     var session: ARSession {
@@ -169,7 +169,17 @@ class ARViewController: UIViewController {
     
     //MARK:- Word Goal Writings Transcript
     
-    var transcript = ""
+    var transcript = "" {
+        didSet {
+            self.delegate = GameMaster.global
+            self.delegate?.exctractCorrectWords(from: transcript)
+        }
+    }
+    var transcriptArray: [String] = []
+    
+    var delegate: WordTranscriptDelegate?
+    
+
 
 }
 
@@ -179,9 +189,13 @@ extension ARViewController: RecognizedTextDataSource {
         let maximumCandidates = 1
         for observation in recognizedText {
             guard let candidate = observation.topCandidates(maximumCandidates).first else { continue }
+            transcriptArray.append(candidate.string.lowercased()
+            )
             transcript += candidate.string
             transcript += "\n"
         }
         
     }
 }
+
+

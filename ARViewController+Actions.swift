@@ -38,21 +38,23 @@ extension ARViewController: UIGestureRecognizerDelegate {
     func restartExperience() {
         guard isRestartAvailable, !virtualObjectLoader.isLoading else { return }
         isRestartAvailable = false
-
+        
         statusViewController.cancelAllScheduledMessages()
-
+        
         virtualObjectLoader.removeAllVirtualObjects()
         addObjectButton.setImage(#imageLiteral(resourceName: "add"), for: [])
         addObjectButton.setImage(#imageLiteral(resourceName: "addPressed"), for: [.highlighted])
-
+        
         resetTracking()
-
+        
         // Disable restart for a while in order to give the session time to restart.
         DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
             self.isRestartAvailable = true
             self.upperControlsView.isHidden = false
         }
     }
+    
+    
 }
 
 extension ARViewController: UIPopoverPresentationControllerDelegate {
@@ -76,7 +78,12 @@ extension ARViewController: UIPopoverPresentationControllerDelegate {
               segueIdentifer == .showObjects else { return }
         
         let objectsViewController = segue.destination as! VirtualObjectSelectionViewController
+        
+        objectsViewController.transcriptArray = self.transcriptArray
+        objectsViewController.transcript = self.transcript
         objectsViewController.virtualObjects = VirtualObject.availableObjects
+        
+        
         objectsViewController.delegate = self
         objectsViewController.sceneView = sceneView
         self.objectsViewController = objectsViewController

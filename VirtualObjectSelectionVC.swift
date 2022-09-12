@@ -48,6 +48,9 @@ class VirtualObjectSelectionViewController: UITableViewController {
     weak var delegate: VirtualObjectSelectionViewControllerDelegate?
     
     weak var sceneView: ARSCNView?
+    
+    var transcriptArray: [String] = []
+    var transcript = ""
 
     private var lastObjectAvailabilityUpdateTimestamp: TimeInterval?
     
@@ -126,13 +129,23 @@ class VirtualObjectSelectionViewController: UITableViewController {
         return GameMaster.global.wordGoalStrings.count
     }
     
+    func wordIsCorrect(_ word: String) -> Bool {
+        if transcriptArray.contains(word.lowercased()) {
+            return true
+        } else {
+            return false
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ObjectCell.reuseIdentifier, for: indexPath) as? ObjectCell else {
             fatalError("Expected `\(ObjectCell.self)` type for reuseIdentifier \(ObjectCell.reuseIdentifier). Check the configuration in Main.storyboard.")
         }
         
-        cell.modelName = virtualObjects[indexPath.row].modelName
-
+        
+        let model = virtualObjects[indexPath.row]
+        cell.modelName = model.modelName
+        
         if selectedVirtualObjectRows.contains(indexPath.row) {
             cell.accessoryType = .checkmark
         } else {
@@ -145,8 +158,16 @@ class VirtualObjectSelectionViewController: UITableViewController {
         } else {
             cell.vibrancyView.alpha = 0.1
         }
-
-        return cell
+        
+        if wordIsCorrect(model.modelName) {
+            return cell
+            
+        } else {
+            cell.objectTitleLabel.textColor = UIColor.red
+            cell.objectTitleLabel.text = "?"
+            cell.isUserInteractionEnabled = false
+            return cell
+        }
     }
     
     override func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {

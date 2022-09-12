@@ -12,14 +12,21 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if name == "" {
+            setLabels()
+        } else {
+            nicknameLabel.text = "Hello, \(name)"
+        }
         // Do any additional setup after loading the view.
     }
+    
     func setLabels(){
         if let nickname = player?.nickName {
-            nicknameLabel.text = "Hello, \(nickname)"
+            nicknameLabel.text = "Welcome Back, \(nickname)"
         }
     }
     var player: Player?
+    var name: String = ""
     
     @IBOutlet weak var nicknameLabel: UILabel!
 
