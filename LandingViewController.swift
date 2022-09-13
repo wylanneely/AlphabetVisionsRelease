@@ -15,6 +15,7 @@ class LandingViewController: UIViewController {
         if let playerData = GameMaster.global.getPlayer1Data() {
             self.player = playerData
             continueButton.isEnabled = true
+            continueButton.state = .normal
         }
         
     }
