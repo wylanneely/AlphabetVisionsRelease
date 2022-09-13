@@ -21,12 +21,17 @@ class HomeViewController: UIViewController {
     }
     
     func setLabels(){
-        if let nickname = player?.nickName {
+        if let nickname = player?.nickName,
+           let imageRef = player?.imageReference {
             nicknameLabel.text = "Welcome Back, \(nickname)"
+            let image = UIImage(named: imageRef)
         }
     }
     var player: Player?
     var name: String = ""
+    
+    
+    @IBOutlet weak var animalImageView: UIImageView!
     
     @IBOutlet weak var nicknameLabel: UILabel!
 
